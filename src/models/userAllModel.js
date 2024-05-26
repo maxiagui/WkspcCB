@@ -33,9 +33,9 @@ const UserAllSchema = new mongoose.Schema({
   },
   mobile: String,
   address: String,
-  role: { type: mongoose.Schema.Types.ObjectId, ref: 'Role' },
+  role: { type: mongoose.Schema.Types.ObjectId, ref: 'role' },
   createdAt: { type: Date, default: Date.now },
-  active: Boolean,
+  active: { type: Boolean, default: true },
 });
 
 

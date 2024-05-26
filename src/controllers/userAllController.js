@@ -19,7 +19,7 @@ exports.createUser = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
     try {
-        const users = await UserAll.find();
+        const users = await UserAll.find().populate({ path: 'role', select: 'name'});
         if (users.length === 0) {
         return res.status(404).json({ message: "There are no users" });
       }

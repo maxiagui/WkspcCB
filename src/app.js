@@ -5,6 +5,7 @@ const PORT =require('./config/activePort');
 const userRoutes = require('./routes/userAllRoutes');
 const roleRoutes = require('./routes/roleRoutes');
 const categoryRoutes = require('./routes/categoryroutes');
+const productRoutes = require('./routes/productRoutes');
 
 // Connect to database
 connectDB();
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/api/user', userRoutes);
 app.use('/api/role', roleRoutes);
 app.use('/api/category', categoryRoutes);
+app.use('/api/product', productRoutes);
 
 app.listen(PORT, () => {
   console.log(`App listening at http://localhost:${PORT}`)
